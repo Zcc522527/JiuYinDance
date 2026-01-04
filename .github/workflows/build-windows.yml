@@ -25,15 +25,16 @@ jobs:
         pip install -r requirements.txt
         pip install pyinstaller
 
-    - name: Build EXE (PySide6 onedir)
-      run: |
-        pyinstaller ^
-          --onedir ^
-          --windowed ^
-          --clean ^
-          --collect-all PySide6 ^
-          --collect-all shiboken6 ^
-          main.py
+- name: Build EXE (PySide6 onedir)
+  run: |
+    pyinstaller `
+      --onedir `
+      --windowed `
+      --clean `
+      --collect-all PySide6 `
+      --collect-all shiboken6 `
+      main.py
+
 
     - name: Zip artifact
       run: |
